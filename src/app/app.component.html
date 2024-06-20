@@ -5,4 +5,7 @@
   <button (click)="checkWord()" >check it</button>
 
 <h3>guesses</h3>
-<div></div>
+<ng-container *ngFor="let array of currentToDisplay" >
+  <app-arrayhandler [array]="array" ></app-arrayhandler>
+  <br>
+</ng-container>

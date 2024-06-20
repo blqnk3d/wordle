@@ -1,0 +1,14 @@
+.isRight{
+  background-color: green;
+}
+.isInWord{
+  background-color: yellow;
+}
+.isWrong{
+  background-color: red;
+}
+
+
+div{
+  display: block ;
+}

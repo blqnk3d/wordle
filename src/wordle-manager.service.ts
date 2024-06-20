@@ -42,8 +42,8 @@ export class WordleManagerService {
         if (guessedChar === wordSplitted[wordKey]){
         dic.isInRightSpot = true
         }
-        dic.char = guessedChar
       }
+      dic.char = guessedChar
       all.push(dic)
     }
     return all
