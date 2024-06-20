@@ -1,11 +1,17 @@
-<div>Wordle</div>
 
+<div class="centerVert">
+  <div  *ngIf="wordManager.trys >= 0">{{wordManager.trys}}</div>
+  <div class="centerHort">
 
-  <input [(ngModel)]="inputedWord" placeholder="Your guess here">
-  <button (click)="checkWord()" >check it</button>
+  <h1>Wordle</h1>
+    <input [(ngModel)]="inputedWord" placeholder="Your guess here">
+    <button class="button-40" (click)="checkWord()">check it</button>
 
-<h3>guesses</h3>
-<ng-container *ngFor="let array of currentToDisplay" >
-  <app-arrayhandler [array]="array" ></app-arrayhandler>
-  <br>
-</ng-container>
+    <ng-container *ngFor="let array of currentToDisplay">
+      <app-arrayhandler [array]="array"></app-arrayhandler>
+      <br>
+    </ng-container>
+  </div>
+  <div class="down"><button class="button-40" (click)="retry()"></button>  </div>
+
+</div>

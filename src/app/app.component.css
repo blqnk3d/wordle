@@ -1,0 +1,41 @@
+.centerVert{
+  height: 100%;
+  display: flex;
+
+  justify-content: center;
+}
+.centerHort{
+display: flex;
+flex-direction: column;
+  text-align: center;
+}
+
+
+*{
+  font-size: 30px;
+}
+
+h1{
+  font-size: 90px;
+  margin-bottom: 10px;
+}
+h2{
+  margin-top: 10px;
+  font-size: 50px;
+}
+
+
+.down{
+  display: flex;
+  flex-direction: column;
+}
+
+.down button{
+  min-width : 48px ;
+  min-height : 48px ;
+  background-image: url("assests/reload-svgrepo-com.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  transform: rotate(130deg);
+}

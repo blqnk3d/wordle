@@ -7,19 +7,23 @@ import {Observable} from "rxjs";
 })
 export class WordleManagerService {
   private apiUrl = 'https://wordle-api.vercel.app/api/wordle';
-
+  trys = 10
   needToGuesWord = ""
 
-  constructor() {
+  constructor(private http : HttpClient) {
     this.getWord()
     this.needToGuesWord.toLowerCase()
   }
 
 
   checkIfWordIsRight(word : string){
+    this.trys-= 1
     let all : CharCheck[] = []
 
-
+    if (this.trys <0 ){
+      this.trys = 0
+      return false
+    }
     if (word === this.needToGuesWord){
       return true
     }
@@ -51,10 +55,16 @@ export class WordleManagerService {
 
 
   getWord(){
+    console.log("running")
+    // @ts-ignore
+    this.http.get("https://random-word-api.herokuapp.com/word?length=5").subscribe(a => this.needToGuesWord = a[0])
     this.needToGuesWord = "abend"
   }
 
-
+  reset(){
+    this.getWord()
+    this.trys = 10
+  }
 
 }
 interface CharCheck {
