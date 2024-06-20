@@ -1,1 +1,1 @@
-{{single?.char}}
+<a  [ngClass]="{'isInWord':single?.isInWord,'isRight' :single?.isInRightSpot,'isWrong':!single?.isInWord &&!single?.isInRightSpot }">{{single?.char}}</a>

@@ -1,13 +1,13 @@
-.isRight{
-  background-color: green;
-}
+
 .isInWord{
   background-color: yellow;
 }
 .isWrong{
   background-color: red;
 }
-
+.isRight{
+  background-color: green;
+}
 
 div{
   display: block ;
