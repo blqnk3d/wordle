@@ -24,8 +24,14 @@ export class AppComponent {
 
 
 checkWord(){
-
-    let checked = this.wordManager.checkIfWordIsRight(this.inputedWord.toLowerCase().trim())
+  if (this.inputedWord.length == 0 ){
+    alert("input a word ._.")
+    return
+  }else if (this.inputedWord.length != 5){
+    alert("it can be only a word with 5 characters")
+    return;
+  }
+  let checked = this.wordManager.checkIfWordIsRight(this.inputedWord.toLowerCase().trim())
   this.inputedWord = ""
   if (checked == true){
     alert("You won congratulation\n word was "+this.inputedWord)

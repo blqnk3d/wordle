@@ -7,7 +7,8 @@ import {Observable} from "rxjs";
 })
 export class WordleManagerService {
   private apiUrl = 'https://wordle-api.vercel.app/api/wordle';
-  trys = 10
+  maxTrys = 10
+  trys = this.maxTrys
   needToGuesWord = ""
 
   constructor(private http : HttpClient) {
@@ -63,7 +64,7 @@ export class WordleManagerService {
 
   reset(){
     this.getWord()
-    this.trys = 10
+    this.trys = this.maxTrys
   }
 
 }
